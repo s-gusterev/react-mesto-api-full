@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors, celebrate, Joi } = require('celebrate');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 const usersrouter = require('./routes/users');
 const cardsrouter = require('./routes/cards');
 const { login, createUser } = require('./controllers/users');
@@ -14,8 +15,10 @@ const allowedCors = [
   'http://localhost:3000',
 ];
 
-const { PORT = 3001 } = process.env;
+const { PORT = 3000 } = process.env;
 const app = express();
+
+app.use(requestLogger);
 
 app.use((req, res, next) => {
   const { origin } = req.headers;
@@ -65,6 +68,8 @@ app.use((req, res, next) => {
 });
 
 mongoose.connect('mongodb://localhost:27017/mestodb');
+
+app.use(errorLogger);
 
 app.use(errors());
 
