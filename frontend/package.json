@@ -2,7 +2,7 @@
   "name": "mesto-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "http://vmesto.nomorepartiesxyz.ru",
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
