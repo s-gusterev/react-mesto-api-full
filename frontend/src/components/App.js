@@ -16,7 +16,6 @@ import Register from './Register';
 import Login from './Login';
 import InfoTooltip from './InfoTooltip';
 import ProtectedRoute from './ProtectedRoute';
-// import * as apiMesto from '../utils/apiMesto';
 
 function App() {
   const history = useHistory();
