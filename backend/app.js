@@ -10,8 +10,8 @@ const { auth } = require('./middlewares/auth');
 const NotFoundError = require('./errors/NotFoundError');
 
 const allowedCors = [
-  'https://praktikum.tk',
-  'http://praktikum.tk',
+  'https://vmesto.nomorepartiesxyz.ru/',
+  'http://vmesto.nomorepartiesxyz.ru/',
   'http://localhost:3000',
 ];
 
