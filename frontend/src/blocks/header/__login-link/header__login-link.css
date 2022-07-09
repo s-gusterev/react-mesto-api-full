@@ -1,0 +1,11 @@
+.header__login-link {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  text-decoration: none;
+  transition: opacity 250ms ease;
+}
+
+.header__login-link:hover {
+  opacity: 0.6;
+}

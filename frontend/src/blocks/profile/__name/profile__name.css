@@ -1,0 +1,26 @@
+.profile__name {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  row-gap: clamp(14px, 1.742919389978214vw, 16px);
+  column-gap: clamp(10px, 1.96078431372549vw, 18px);
+  align-items: center;
+}
+
+/* @media screen and (max-width:840px) {
+  .profile__name {
+    column-gap: 5px;
+  }
+} */
+
+
+@media screen and (max-width:768px) {
+  .profile__name {
+    text-align: center;
+    margin-bottom: 36px;
+    grid-template-columns: 18px max-content 18px;
+    width: 100%;
+    justify-items: center;
+    justify-content: center;
+
+  }
+}

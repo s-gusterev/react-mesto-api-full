@@ -1,0 +1,17 @@
+.profile__title {
+  font-weight: 500;
+  font-size: clamp(27px, 4.57516339869281vw, 42px);
+  line-height: 1.15;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: clamp(200px, 49vw, 530px);
+}
+
+@media screen and (max-width:768px) {
+  .profile__title {
+    grid-column: 2/2;
+  }
+}

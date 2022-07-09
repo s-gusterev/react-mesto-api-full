@@ -1,0 +1,4 @@
+.popup__container {
+  display: grid;
+  position: relative;
+}

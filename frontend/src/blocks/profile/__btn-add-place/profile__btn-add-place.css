@@ -1,0 +1,39 @@
+.profile__btn-add-place {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: grid;
+  position: relative;
+  place-items: center;
+  padding: 23px 73px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: opacity 250ms ease;
+}
+
+.profile__btn-add-place:hover {
+  opacity: .6;
+}
+
+
+.profile__btn-add-place::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-image: url(../../../images/icon-add.svg);
+  background-size: cover;
+}
+
+
+@media screen and (max-width:768px) {
+  .profile__btn-add-place {
+    width: 100%;
+  }
+
+  .profile__btn-add-place::before {
+    width: 16px;
+    height: 16px;
+  }
+}

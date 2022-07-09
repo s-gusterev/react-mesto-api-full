@@ -1,0 +1,24 @@
+.card__del {
+  position: absolute;
+  width: 18px;
+  height: 19px;
+  background-image: url(../../../images/icon-basket.svg);
+  background-color: transparent;
+  border: 0;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: opacity 250ms ease;
+}
+
+.card__del:hover {
+  opacity: .6;
+}
+
+.card__del_visible {
+  visibility: visible;
+}
+
+.card__del_hidden {
+  visibility: hidden;
+}

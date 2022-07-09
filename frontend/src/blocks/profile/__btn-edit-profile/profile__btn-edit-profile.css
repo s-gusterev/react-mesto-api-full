@@ -1,0 +1,36 @@
+.profile__btn-edit-profile {
+  width: clamp(18px, 2.61437908496732vw, 24px);
+  height: clamp(18px, 2.61437908496732vw, 24px);
+  background: transparent;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  display: grid;
+  position: relative;
+  place-items: center;
+  grid-row: 1/-1;
+  grid-column: 2/-1;
+  cursor: pointer;
+  transition: opacity 250ms ease;
+}
+
+.profile__btn-edit-profile:hover {
+  opacity: .6;
+}
+
+
+.profile__btn-edit-profile::before {
+  content: '';
+  position: absolute;
+  width: clamp(7.5px, 1.089324618736383vw, 10px);
+  height: clamp(7.5px, 1.089324618736383vw, 10px);
+  background-image: url(../../../images/icon-edit.svg);
+  background-size: cover;
+}
+
+
+@media screen and (max-width:768px) {
+  .profile__btn-edit-profile {
+    margin: 0;
+    grid-column: 3/3;
+  }
+}

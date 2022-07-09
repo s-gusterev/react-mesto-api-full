@@ -1,0 +1,43 @@
+.card__img {
+  display: block;
+  height: 282px;
+  object-fit: cover;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.card__img::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  transition: 250ms;
+}
+
+.card__img:hover::after {
+  opacity: .3;
+}
+
+@media screen and (max-width: 917px) {
+  .card__img {
+    height: clamp(282px, 46.9vw, 431px);
+  }
+}
+
+@media screen and (max-width: 618px) {
+  .card__img {
+    height: clamp(282px, 93.85113268608414vw, 580px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .card__img {
+    height: 282px;
+  }
+}

@@ -1,0 +1,32 @@
+.popup {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 300ms, opacity 300ms ease;
+  /* z-index: -1; */
+}
+
+.popup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  /* opacity: .5; */
+  transition: opacity 300ms ease;
+  z-index: -1;
+}
+
+.popup_background_light::before {
+  opacity: 0.5;
+}
+
+.popup_background_dark::before {
+  opacity: 0.9;
+}
