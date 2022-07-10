@@ -176,8 +176,7 @@ function App() {
   function handleRegister({ password, email }) {
      api
       .register(password, email)
-      .then((res) => {
-        console.log(res)
+      .then(() => {
         history.push('/sign-in');
         setTooltip({
           isOpen: true,
