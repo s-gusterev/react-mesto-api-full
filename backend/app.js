@@ -3,6 +3,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors, celebrate, Joi } = require('celebrate');
+const { cors } = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const usersrouter = require('./routes/users');
 const cardsrouter = require('./routes/cards');
@@ -10,33 +11,12 @@ const { login, createUser } = require('./controllers/users');
 const { auth } = require('./middlewares/auth');
 const NotFoundError = require('./errors/NotFoundError');
 
-const allowedCors = [
-  'https://vmesto.nomorepartiesxyz.ru',
-  'http://vmesto.nomorepartiesxyz.ru',
-  'http://localhost:3000',
-];
-
 const { PORT = 3000 } = process.env;
 const app = express();
 
 app.use(requestLogger);
 
-app.use((req, res, next) => {
-  const { origin } = req.headers;
-  const { method } = req;
-  const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
-  const requestHeaders = req.headers['access-control-request-headers'];
-  if (allowedCors.includes(origin)) {
-    res.header('Access-Control-Allow-Origin', origin);
-  }
-
-  if (method === 'OPTIONS') {
-    res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
-    res.header('Access-Control-Allow-Headers', requestHeaders);
-    return res.end();
-  }
-  return next();
-});
+app.use(cors);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
