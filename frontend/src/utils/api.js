@@ -151,6 +151,6 @@ class Api {
   }
 }
 
-const api = new Api('http://api.vmesto.nomorepartiesxyz.ru');
+const api = new Api('https://api.vmesto.nomorepartiesxyz.ru');
 
 export default api;
